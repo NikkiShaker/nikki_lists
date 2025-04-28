@@ -1,1 +1,20 @@
-{}
+{
+    "Groceries": {
+        "id": "4b8ea31f-9d13-468e-a44d-756dbadfe5fe",
+        "listTitle": "Groceries",
+        "description": "For remembering",
+        "items": {}
+    },
+    "To Do": {
+        "id": "0efbdb10-3a06-4de3-b507-aec7215739e7",
+        "listTitle": "To Do",
+        "description": "Things I gotta do before Monday",
+        "items": {}
+    },
+    "Hit": {
+        "id": "f3fd78fa-e169-465b-8a05-8415ba1ea399",
+        "listTitle": "Hit",
+        "description": "List of who I should go after",
+        "items": {}
+    }
+}

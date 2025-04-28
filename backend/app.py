@@ -3,7 +3,7 @@ from flask_cors import CORS
 from list import List
 
 app = Flask(__name__)
-CORS(app, origins="http://localhost:3001")
+CORS(app, origins=["http://localhost:3000", "http://localhost:5173"])
 
 print("Enter your name: ")
 name = input()
