@@ -1,20 +1,56 @@
 {
-    "Groceries": {
-        "id": "4b8ea31f-9d13-468e-a44d-756dbadfe5fe",
-        "listTitle": "Groceries",
-        "description": "For remembering",
+    "Hit": {
+        "id": "3e416fc4-b48d-4d47-9588-f9e322bd5405",
+        "listTitle": "Hit",
+        "description": "Just some people I need to take out",
+        "items": {}
+    },
+    "Crushesssss": {
+        "id": "00326e54-543d-4329-afba-5b75c9807e1b",
+        "listTitle": "Crushesssss",
+        "description": "Just some people I might like ;)",
+        "items": {}
+    },
+    "Grocery": {
+        "id": "62bb0f6d-ca4b-4218-844e-a46ad05dec0b",
+        "listTitle": "Grocery",
+        "description": "SHE NEEDS SOME MILK",
+        "items": {}
+    },
+    "Hit (on)": {
+        "id": "d31e7f24-b3fc-4539-8493-0ab71e6d78c2",
+        "listTitle": "Hit (on)",
+        "description": "Just some people I need to take out (on a date)",
+        "items": {}
+    },
+    "Bestie": {
+        "id": "d44dbd6d-3103-4512-a2c9-9a8ac51ac7fa",
+        "listTitle": "Bestie",
+        "description": "Who are my actual besties",
         "items": {}
     },
     "To Do": {
-        "id": "0efbdb10-3a06-4de3-b507-aec7215739e7",
+        "id": "74561bd6-60dc-4d6c-a1d5-4f09d4f049a9",
         "listTitle": "To Do",
-        "description": "Things I gotta do before Monday",
+        "description": "Gotta be productive and keep capitalism alive",
         "items": {}
     },
-    "Hit": {
-        "id": "f3fd78fa-e169-465b-8a05-8415ba1ea399",
-        "listTitle": "Hit",
-        "description": "List of who I should go after",
+    "Recipe": {
+        "id": "ce4776a4-d8b6-4180-829f-7c4e7a18c3ae",
+        "listTitle": "Recipe",
+        "description": "Just some new recipe ideas",
+        "items": {}
+    },
+    "": {
+        "id": "4931d912-0157-4414-aeca-0bf6dd598254",
+        "listTitle": "",
+        "description": "",
+        "items": {}
+    },
+    "Favourite songs": {
+        "id": "be671838-bf10-4856-9cba-a187dd2a016b",
+        "listTitle": "Favourite songs",
+        "description": "The most iconic playlist of all",
         "items": {}
     }
 }

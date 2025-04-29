@@ -6,6 +6,15 @@ class List:
     def __init__(self, name=""):
         self.name = name
         self.lists = {}
+        self.load_list()
+
+    def load_list(self): # loads previous list in lists.json if it exists
+        try:
+            with open("list.json", "r") as f:
+                self.lists = json.load(f)
+
+        except FileNotFoundError:
+            self.lists = {}
     
     def getList(self, title):
         if title in self.lists.keys():
