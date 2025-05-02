@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Navigate } from "react-router-dom"
+import { Navigate, Link } from "react-router-dom"
 import axios from 'axios';
 import CreateList from './CreateList';
 import '../styles/Home.css';
@@ -9,6 +9,7 @@ function Home() {
   const [titleInput, setTitleInput] = useState("");
   const [descInput, setDescInput] = useState("");
   const [createNewList, setCreateNewList] = React.useState(false);
+
 
 
   // Creates Grocery list
@@ -40,7 +41,7 @@ function Home() {
     axios.get("http://localhost:5001/allLists")
       .then(res => {
         setData(res.data)
-        console.log("current list: " + JSON.stringify(res.data));
+        //console.log("current list: " + JSON.stringify(res.data));
       })
       .catch(error => {
         console.error("Error with catching lists: ", error);
@@ -65,7 +66,9 @@ function Home() {
           ) : (
             Object.entries(data).map(([title, list], i) => (
               <p key={i}>
-                <button><strong>{title} List </strong> - {list.description}</button>
+                <Link to={`/list/${encodeURIComponent(title)}`}>
+                  <button><strong>{title} List: </strong> {list.description}</button>
+                </Link>
               </p>
             ))
           )}

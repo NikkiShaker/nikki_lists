@@ -24,7 +24,7 @@ function CreateList() {
                 title: titleInput,
                 description: descInput
             });
-            console.log("create response: ", response.data);
+            //console.log("create response: ", response.data);
 
             setTitleInput(""); // Clear title input textbox
             setDescInput(""); // Clear description input textbox as well

@@ -1,0 +1,57 @@
+.parent {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+#list {
+    background-color: #FFC0CB;
+    border-radius: 12px;
+    padding: 16px;
+    width: 250vh;
+}
+
+#items {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 1rem;
+    padding-left: 0;
+    list-style: none;
+    margin: 0;
+}
+
+#items>li {
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.itemHeader {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/*
+#list ul {
+    padding-left: 1.5rem;
+    list-style-type: disc;
+}*/
+
+#list ul.itemDetails {
+    list-style-type: disc;
+    list-style-position: inside;
+    padding-left: 3rem;
+    color: #fff;
+    font-size: 0.95rem;
+    text-align: left;
+}
+
+#addBox {
+    width: 32vh;
+    height: auto;
+    flex-shrink: 0;
+}

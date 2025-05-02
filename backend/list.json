@@ -9,13 +9,45 @@
         "id": "00326e54-543d-4329-afba-5b75c9807e1b",
         "listTitle": "Crushesssss",
         "description": "Just some people I might like ;)",
-        "items": {}
+        "items": {
+            "A guy": {
+                "id": "f9819b6a-f4de-474c-90d8-7f583d1e5676",
+                "itemName": "A guy",
+                "dueDate": "2025-05-09",
+                "done": true
+            },
+            "Another guy": {
+                "id": "0a3afd5e-cb12-4f51-a0f1-e1f9951dcbbd",
+                "itemName": "Another guy",
+                "dueDate": "2025-05-30",
+                "done": false
+            },
+            "Third guy": {
+                "id": "db8edf62-5780-4418-b2ca-5ddcacdc6783",
+                "itemName": "Third guy",
+                "dueDate": "2025-07-03",
+                "done": false
+            }
+        }
     },
     "Grocery": {
         "id": "62bb0f6d-ca4b-4218-844e-a46ad05dec0b",
         "listTitle": "Grocery",
         "description": "SHE NEEDS SOME MILK",
-        "items": {}
+        "items": {
+            "Milk": {
+                "id": "33266f94-aea5-4322-829b-8654f4ef0434",
+                "itemName": "Milk",
+                "dueDate": "2025-04-30",
+                "done": true
+            },
+            "Eggs": {
+                "id": "e98309af-2210-4ac9-b979-7091fd49e4b3",
+                "itemName": "Eggs",
+                "dueDate": "2025-05-29",
+                "done": false
+            }
+        }
     },
     "Hit (on)": {
         "id": "d31e7f24-b3fc-4539-8493-0ab71e6d78c2",
