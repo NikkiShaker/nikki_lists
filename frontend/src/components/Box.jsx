@@ -5,7 +5,7 @@ function Box({ children, ...props }) {
         <div className="box" {...props}>
             <div className="box-content">
                 {children}
-            </div>;
+            </div>
         </div>
     )
 }

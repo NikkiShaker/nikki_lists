@@ -46,6 +46,12 @@
                 "itemName": "Eggs",
                 "dueDate": "2025-05-29",
                 "done": false
+            },
+            "": {
+                "id": "2b833a54-a36a-4e65-8304-25f5ffa30819",
+                "itemName": "",
+                "dueDate": "",
+                "done": false
             }
         }
     },
@@ -53,12 +59,6 @@
         "id": "d31e7f24-b3fc-4539-8493-0ab71e6d78c2",
         "listTitle": "Hit (on)",
         "description": "Just some people I need to take out (on a date)",
-        "items": {}
-    },
-    "Bestie": {
-        "id": "d44dbd6d-3103-4512-a2c9-9a8ac51ac7fa",
-        "listTitle": "Bestie",
-        "description": "Who are my actual besties",
         "items": {}
     },
     "To Do": {
@@ -73,16 +73,10 @@
         "description": "Just some new recipe ideas",
         "items": {}
     },
-    "": {
-        "id": "4931d912-0157-4414-aeca-0bf6dd598254",
-        "listTitle": "",
-        "description": "",
-        "items": {}
-    },
     "Favourite songs": {
-        "id": "be671838-bf10-4856-9cba-a187dd2a016b",
+        "id": "4191416b-959b-47a9-b592-842f5c9cb1b9",
         "listTitle": "Favourite songs",
-        "description": "The most iconic playlist of all",
+        "description": "Just the most nostalgic and best songs",
         "items": {}
     }
 }

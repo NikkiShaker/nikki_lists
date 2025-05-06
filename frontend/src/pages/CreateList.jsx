@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { Navigate } from "react-router-dom"
+import Box from '../components/Box.jsx';
+import HomeBtn from '../components/HomeBtn.jsx';
+import '../styles/CreateList.css';
 import axios from 'axios';
 
 function CreateList() {
@@ -43,15 +46,21 @@ function CreateList() {
     return (
         <>
             <div>
-                <p>HEY THIS IS THE CREATE PAGE</p>
+                <div className="home" >
+                    <HomeBtn />
+                </div>
 
-                <p>Name of List: </p>
-                <input type="text" value={titleInput} onChange={handleTitleChange} /><br />
+                <Box>
+                    <p>CREATE A NEW LIST</p>
 
-                <p>Description: </p>
-                <input type="text" value={descInput} onChange={handleDescChange} /><br /><br />
+                    <p>Name of List: </p>
+                    <input type="text" value={titleInput} onChange={handleTitleChange} /><br />
 
-                <button onClick={createList}>Create New List</button>
+                    <p>Description: </p>
+                    <input type="text" value={descInput} onChange={handleDescChange} /><br /><br />
+
+                    <button onClick={createList}>CREATE</button>
+                </Box>
             </div>
         </>
     )

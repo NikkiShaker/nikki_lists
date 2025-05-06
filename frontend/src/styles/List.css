@@ -1,16 +1,48 @@
 .parent {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 100vh;
+    width: 90vw;
+
+    gap: 2rem;
+}
+
+#homeBtn {
+    background-color: #FFC0CB;
+    width: 17vw;
+    height: 10vh;
+}
+
+#home {
+    position: relative;
+    left: -5vw;
+    top: 2vh;
 }
 
 #list {
+    flex: 3;
+    position: relative;
+    width: 180%;
     background-color: #FFC0CB;
     border-radius: 12px;
     padding: 16px;
-    width: 250vh;
+    box-sizing: border-box;
+    top: 2%;
+    right: 6%;
+}
+
+#removeBtn {
+    background-color: #FFC0CB;
+    width: 14vw;
+    height: 8vh;
+}
+
+#remove {
+    position: relative;
+    right: 6vw;
+    top: 2vh;
 }
 
 #items {
@@ -35,12 +67,6 @@
     gap: 0.5rem;
 }
 
-/*
-#list ul {
-    padding-left: 1.5rem;
-    list-style-type: disc;
-}*/
-
 #list ul.itemDetails {
     list-style-type: disc;
     list-style-position: inside;
@@ -50,8 +76,35 @@
     text-align: left;
 }
 
-#addBox {
-    width: 32vh;
-    height: auto;
+#addBox.part {
+    /*width: 32vh;
+    height: auto;*/
+    /*position: absolute;*/
+    right: 105px;
+    top: 10%;
     flex-shrink: 0;
+    box-sizing: border-box;
+}
+
+#box-container {
+    flex: 1;
+    position: relative;
+    height: 100%;
+    right: 22.2vw;
+    top: 11.5vh;
+    box-sizing: border-box;
+}
+
+
+@media (max-width:900px) {
+    /* .parent {
+        flex-direction: column;
+    }
+*/
+    /*
+    #list.part,
+    #box-container.part {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }*/
 }

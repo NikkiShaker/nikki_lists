@@ -8,11 +8,12 @@
     justify-content: center;
     align-items: center;
     padding: 0;
+    width: fit-content;
 }
 
 .box-content {
-    padding-left: 3vh;
-    padding-right: 3vh;
+    padding: 3vh;
+
     text-align: left;
     justify-content: space-evenly;
     gap: 1rem;

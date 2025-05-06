@@ -1,7 +1,9 @@
 import { useState, useEffect, } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import { Navigate, Link } from "react-router-dom"
 import Box from '../components/Box.jsx';
+import HomeBtn from '../components/HomeBtn.jsx';
 import '../styles/List.css';
 import Checkbox from '@mui/material/Checkbox';
 import { HeartCheck } from "../components/HeartCheck.jsx";
@@ -65,54 +67,60 @@ function List() {
 
     }, [listTitle, itemCount])
 
-    if (!listData) return < p > Loading List...</p >;
+    if (!listData) return < p > LOADING LIST...</p >;
 
     return (
         <>
-            <div>
-                <div className="parent">
-                    <div id="list">
-                        <h2>{listTitle} List: </h2>
-                        <p>Description: {listData.description}</p>
+            <div className="parent">
+                <div id="home">
+                    <HomeBtn />
+                </div>
+                <div id="list" >
+                    <h2>{listTitle} List: </h2>
+                    <p>DESCRIPTION: {listData.description}</p>
 
-                        {listData.items && Object.entries(listData.items).length > 0 ? ( // Making sure the there are items in the list that exist
-                            <ul id="items">
-                                {Object.entries(listData.items).map(([itemName, itemData]) => ( // Taking the title and data of each list item
-                                    <li key={itemData.id}> {/* Look up wtf this line does */}
-                                        <div className="itemHeader">
+                    {listData.items && Object.entries(listData.items).length > 0 ? ( // Making sure the there are items in the list that exist
+                        <ul id="items">
+                            {Object.entries(listData.items).map(([itemName, itemData]) => ( // Taking the title and data of each list item
+                                <li key={itemData.id}> {/* Look up wtf this line does */}
+                                    <div className="itemHeader">
 
-                                            <Checkbox
-                                                icon={<HeartCheck check={false} />}
-                                                checkedIcon={<HeartCheck check={true} />}
-                                                sx={{
-                                                    padding: "4px",
-                                                    "&.Mui-checked": {
-                                                        color: "hotpink"
-                                                    },
-                                                }}
-                                            />
-                                            <strong>{itemName}</strong>
-                                        </div>
+                                        <Checkbox
+                                            icon={<HeartCheck check={false} />}
+                                            checkedIcon={<HeartCheck check={true} />}
+                                            sx={{
+                                                padding: "4px",
+                                                "&.Mui-checked": {
+                                                    color: "hotpink"
+                                                },
+                                            }}
+                                        />
+                                        <strong>{itemName}</strong>
+                                    </div>
 
-                                        <ul className="itemDetails">
-                                            <li>Due on: {itemData.dueDate}</li>
-                                            <li>{itemData.done ? "You've completed it!! YAY" : "Girl, get to work"}</li>
-                                        </ul>
+                                    <ul className="itemDetails">
+                                        <li>DUE ON: {itemData.dueDate}</li>
+                                        <li>{itemData.done ? "you've completed it!! YAY" : "girl, get to work"}</li>
+                                    </ul>
 
-                                    </li>
-                                ))}
-                            </ul>
-                        ) : (
-                            <p>Empty list</p>
-                        )}
-                    </div>
+                                </li>
+                            ))}
+                        </ul>
+                    ) : (
+                        <p>EMPTY LIST</p>
+                    )}
+                </div>
+                <div id="remove" className="part">
+                    <button id="removeBtn">REMOVE ITEM</button>
+                </div>
+                <div id="box-container" className="part">
 
                     <Box id="addBox">
 
                         <h2>Add Item</h2>
 
                         <p>
-                            Title:
+                            TITLE:
                             <input type="text" style={{ width: "23.5vh" }} value={nameInput} onChange={handleNameChange} />
                         </p>
 
@@ -138,11 +146,11 @@ function List() {
                             />
                         </p>
 
-                        <button onClick={addItem}>Add New Item</button>
+                        <button onClick={addItem}>ADD NEW ITEM</button>
                     </Box>
-
                 </div>
-            </div>
+
+            </div >
         </>
     )
 }
