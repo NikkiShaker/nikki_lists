@@ -3,6 +3,7 @@ import { Navigate } from "react-router-dom"
 import Box from '../components/Box.jsx';
 import HomeBtn from '../components/HomeBtn.jsx';
 import '../styles/CreateList.css';
+import '../styles/Home.css';
 import axios from 'axios';
 
 function CreateList() {
@@ -50,17 +51,24 @@ function CreateList() {
                     <HomeBtn />
                 </div>
 
-                <Box>
-                    <p>CREATE A NEW LIST</p>
+                <div className="createBox">
 
-                    <p>Name of List: </p>
-                    <input type="text" value={titleInput} onChange={handleTitleChange} /><br />
+                    <Box style={{ backgroundColor: "#FFC0CB" }}>
+                        <Box style={{ backgroundColor: "white" }}>
+                            <h2 style={{ color: "#FFC0CB" }}>CREATE A NEW LIST</h2>
 
-                    <p>Description: </p>
-                    <input type="text" value={descInput} onChange={handleDescChange} /><br /><br />
+                            <p style={{ color: "black" }}>Name of List: </p>
+                            <input type="text" value={titleInput} onChange={handleTitleChange} style={{ backgroundColor: "#FFC0CB", color: "black" }} /><br />
 
-                    <button onClick={createList}>CREATE</button>
-                </Box>
+                            <p style={{ color: "black" }}>Description: </p>
+                            <input type="text" value={descInput} onChange={handleDescChange} style={{ color: "black", backgroundColor: "#FFC0CB" }} /><br /><br />
+
+                            <button className="createBtn btn" onClick={createList}>CREATE</button>
+                        </Box>
+                    </Box>
+
+                </div>
+
             </div>
         </>
     )

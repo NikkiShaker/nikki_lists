@@ -1,5 +1,14 @@
 .home {
     position: relative;
-    right: 41vw;
-    bottom: 18vh;
+    right: 38vw;
+    bottom: 15vh;
+}
+
+.createBox {
+    position: relative;
+    bottom: 15vh;
+}
+
+.createBtn {
+    background-color: #FFC0CB;
 }

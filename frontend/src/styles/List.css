@@ -21,27 +21,26 @@
     top: 2vh;
 }
 
-#list {
-    flex: 3;
+.list {
     position: relative;
-    width: 180%;
+    width: 180vw;
     background-color: #FFC0CB;
     border-radius: 12px;
     padding: 16px;
     box-sizing: border-box;
     top: 2%;
-    right: 6%;
+    left: 5vw;
 }
 
 #removeBtn {
-    background-color: #FFC0CB;
+
     width: 14vw;
     height: 8vh;
 }
 
 #remove {
     position: relative;
-    right: 6vw;
+    left: 17vw;
     top: 2vh;
 }
 
@@ -76,11 +75,11 @@
     text-align: left;
 }
 
-#addBox.part {
+#addBox {
     /*width: 32vh;
     height: auto;*/
     /*position: absolute;*/
-    right: 105px;
+    right: 15px;
     top: 10%;
     flex-shrink: 0;
     box-sizing: border-box;
@@ -90,9 +89,13 @@
     flex: 1;
     position: relative;
     height: 100%;
-    right: 22.2vw;
-    top: 11.5vh;
+    right: 2.3vw;
+    top: 19.5vh;
     box-sizing: border-box;
+}
+
+.addBtn {
+    background-color: #FFC0CB;
 }
 
 

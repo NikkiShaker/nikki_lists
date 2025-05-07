@@ -45,6 +45,18 @@ class List:
             else:
                 return ("This item already exists in your " + str(title) + " list")
         return ("The " + str(title) + " list was not found :(")
+
+    
+    def itemCompleted(self, title, itemName, done):
+        if title in self.lists:
+            if itemName in self.lists[title]["items"]:
+                self.lists[title]["items"][itemName]["done"] = done
+                self.save()
+                return "Check saved"
+            else:
+                return "This item was not found in the list"
+        else:
+            return "The list was not found"
     
     
     # Removes item from a list based on the title of the list and the list item name. Maybe we could send the index later to save time

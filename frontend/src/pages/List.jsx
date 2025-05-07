@@ -5,6 +5,7 @@ import { Navigate, Link } from "react-router-dom"
 import Box from '../components/Box.jsx';
 import HomeBtn from '../components/HomeBtn.jsx';
 import '../styles/List.css';
+import '../styles/Home.css';
 import Checkbox from '@mui/material/Checkbox';
 import { HeartCheck } from "../components/HeartCheck.jsx";
 
@@ -20,6 +21,10 @@ function List() {
     const [dueDateInput, setDueDateInput] = useState("");
     const [isDone, setIsDone] = useState(false);
 
+    // Keeps list of checked items
+    const [checkedList, setCheckedList] = useState({});
+    const [itemsClicked, setItemsClicked] = useState({});
+
     // Handles when there's changes made to the items
     const handleNameChange = (event) => {
         setNameInput(event.target.value);
@@ -31,6 +36,41 @@ function List() {
 
     const handleIsDoneChange = (event) => {
         setIsDone(event.target.checked);
+    };
+
+    // For when you completed an item on the list
+    const handleCheckedListChange = (itemName) => async (event) => {
+
+        const updatedCheck = event.target.checked;
+        setCheckedList(prev => ({
+            ...prev,
+            [itemName]: updatedCheck
+        }));
+
+        // console.log("updatedCheck: " + JSON.stringify(updatedCheck))
+
+        try {
+            const response = await axios.post("http://localhost:5001/itemCompleted", {
+                title: listTitle,
+                itemName: itemName,
+                done: updatedCheck
+            });
+            // console.log("create response: ", response.data);
+
+            setItemCount(prev => prev + 1);
+        }
+        catch (error) {
+            console.log("Error creating list: " + error)
+        }
+
+    };
+
+    // For when you want to delete the list item(s)
+    const handleItemsClickedChange = (title) => (event) => {
+        setItemsClicked(prev => ({
+            ...prev,
+            [title]: event.target.value
+        }))
     };
 
     // Function adds a new item to the list
@@ -54,12 +94,21 @@ function List() {
         }
     }
 
+    // Getting data for the list being displayed
     useEffect(() => {
 
         axios.post("http://localhost:5001/getList", { title: listTitle })
             .then(res => {
                 setListData(res.data)
-                console.log("res.data: " + JSON.stringify(res.data));
+                //console.log("res.data: " + JSON.stringify(res.data));
+
+                const initialChecks = {};
+
+                Object.entries(res.data.items).forEach(([itemName, item]) => {
+                    initialChecks[itemName] = item.done;
+                });
+
+                setCheckedList(initialChecks);
             })
             .catch(error => {
                 console.log("Error with catching lists", error);
@@ -74,79 +123,91 @@ function List() {
             <div className="parent">
                 <div id="home">
                     <HomeBtn />
+
                 </div>
-                <div id="list" >
-                    <h2>{listTitle} List: </h2>
-                    <p>DESCRIPTION: {listData.description}</p>
+                <Box className="list" style={{ width: "100vw", backgroundColor: "white" }}>
+                    <Box style={{ width: "100%", color: "white", backgroundColor: "#FFC0CB" }}>
+                        <h2>{listTitle} List: </h2>
+                        <p>DESCRIPTION: {listData.description}</p>
 
-                    {listData.items && Object.entries(listData.items).length > 0 ? ( // Making sure the there are items in the list that exist
-                        <ul id="items">
-                            {Object.entries(listData.items).map(([itemName, itemData]) => ( // Taking the title and data of each list item
-                                <li key={itemData.id}> {/* Look up wtf this line does */}
-                                    <div className="itemHeader">
+                        {listData.items && Object.entries(listData.items).length > 0 ? ( // Making sure the there are items in the list that exist
+                            <ul id="items">
+                                {Object.entries(listData.items).map(([itemName, itemData]) => ( // Taking the title and data of each list item
+                                    <li key={itemData.id}> {/* Look up wtf this line does */}
+                                        <div className="itemHeader">
 
-                                        <Checkbox
-                                            icon={<HeartCheck check={false} />}
-                                            checkedIcon={<HeartCheck check={true} />}
-                                            sx={{
-                                                padding: "4px",
-                                                "&.Mui-checked": {
-                                                    color: "hotpink"
-                                                },
-                                            }}
-                                        />
-                                        <strong>{itemName}</strong>
-                                    </div>
+                                            <Checkbox
+                                                icon={<HeartCheck check={false} />}
+                                                checkedIcon={<HeartCheck check={true} />}
+                                                sx={{
+                                                    padding: "4px",
+                                                    "&.Mui-checked": {
+                                                        color: "hotpink"
+                                                    },
+                                                }}
+                                                checked={!!checkedList[itemName]}
+                                                onChange={handleCheckedListChange(itemName)}
+                                            />
 
-                                    <ul className="itemDetails">
-                                        <li>DUE ON: {itemData.dueDate}</li>
-                                        <li>{itemData.done ? "you've completed it!! YAY" : "girl, get to work"}</li>
-                                    </ul>
+                                            <button style={{ backgroundColor: "#FFC0CB" }}><strong>{itemName}</strong></button>
+                                        </div>
 
-                                </li>
-                            ))}
-                        </ul>
-                    ) : (
-                        <p>EMPTY LIST</p>
-                    )}
+                                        <ul className="itemDetails">
+                                            {itemData.dueDate && <li style={{ position: "relative", left: "2.2vw" }}>DUE ON: {itemData.dueDate}</li>}
+                                        </ul>
+
+                                    </li>
+                                ))}
+                            </ul>
+                        ) : (
+                            <p>EMPTY LIST</p>
+                        )}
+
+                    </Box>
+                </Box>
+
+                <div id="remove">
+                    <Box >
+                        <button id="removeBtn" className="colorScheme btn">REMOVE ITEM</button>
+                    </Box>
                 </div>
-                <div id="remove" className="part">
-                    <button id="removeBtn">REMOVE ITEM</button>
-                </div>
-                <div id="box-container" className="part">
 
-                    <Box id="addBox">
+                <div id="box-container">
+                    <Box style={{ backgroundColor: "#FFC0CB" }}>
 
-                        <h2>Add Item</h2>
+                        <Box id="addBox" style={{ color: "#FFC0CB", backgroundColor: "white" }}>
 
-                        <p>
-                            TITLE:
-                            <input type="text" style={{ width: "23.5vh" }} value={nameInput} onChange={handleNameChange} />
-                        </p>
+                            <h2>Add Item</h2>
 
-                        <p>
-                            <label htmlFor="due-date">Due Date: </label>
-                            <input id="due-date" type="date" style={{ width: "23.5vh" }} value={dueDateInput} onChange={handleDueDateChange} />
-                        </p>
+                            <p style={{ color: "black" }}>
+                                TITLE:
+                                <input type="text" style={{ width: "23.5vh", backgroundColor: "#FFC0CB", color: "black" }} value={nameInput} onChange={handleNameChange} />
+                            </p>
 
-                        <p>
-                            Completed?
-                            <Checkbox
-                                icon={<HeartCheck check={false} />}
-                                checkedIcon={<HeartCheck check={true} />}
-                                sx={{
-                                    padding: "4px",
-                                    "&.Mui-checked": {
-                                        color: "hotpink"
-                                    },
-                                }}
+                            <p style={{ color: "black" }}>
+                                <label htmlFor="due-date">Due Date: </label>
+                                <input id="due-date" type="date" style={{ width: "23.5vh", backgroundColor: "#FFC0CB", color: "black" }} value={dueDateInput} onChange={handleDueDateChange} />
+                            </p>
 
-                                checked={isDone}
-                                onChange={handleIsDoneChange}
-                            />
-                        </p>
+                            <p style={{ color: "black" }}>
+                                Completed?
+                                <Checkbox
+                                    icon={<HeartCheck check={false} />}
+                                    checkedIcon={<HeartCheck check={true} />}
+                                    sx={{
+                                        padding: "4px",
+                                        "&.Mui-checked": {
+                                            color: "hotpink"
+                                        },
+                                    }}
 
-                        <button onClick={addItem}>ADD NEW ITEM</button>
+                                    checked={isDone}
+                                    onChange={handleIsDoneChange}
+                                />
+                            </p>
+
+                            <button className="addBtn btn" onClick={addItem} >ADD NEW ITEM</button>
+                        </Box>
                     </Box>
                 </div>
 

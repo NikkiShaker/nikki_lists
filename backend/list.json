@@ -3,7 +3,14 @@
         "id": "3e416fc4-b48d-4d47-9588-f9e322bd5405",
         "listTitle": "Hit",
         "description": "Just some people I need to take out",
-        "items": {}
+        "items": {
+            "": {
+                "id": "3ae46483-1c50-4a4b-8e3c-10cccf988b61",
+                "itemName": "",
+                "dueDate": "",
+                "done": false
+            }
+        }
     },
     "Crushesssss": {
         "id": "00326e54-543d-4329-afba-5b75c9807e1b",
@@ -14,7 +21,7 @@
                 "id": "f9819b6a-f4de-474c-90d8-7f583d1e5676",
                 "itemName": "A guy",
                 "dueDate": "2025-05-09",
-                "done": true
+                "done": false
             },
             "Another guy": {
                 "id": "0a3afd5e-cb12-4f51-a0f1-e1f9951dcbbd",
@@ -26,6 +33,12 @@
                 "id": "db8edf62-5780-4418-b2ca-5ddcacdc6783",
                 "itemName": "Third guy",
                 "dueDate": "2025-07-03",
+                "done": false
+            },
+            "A dude": {
+                "id": "9421aaa4-1cc4-43e3-b803-4b54a380d943",
+                "itemName": "A dude",
+                "dueDate": "2025-06-07",
                 "done": false
             }
         }
@@ -77,6 +90,38 @@
         "id": "4191416b-959b-47a9-b592-842f5c9cb1b9",
         "listTitle": "Favourite songs",
         "description": "Just the most nostalgic and best songs",
-        "items": {}
+        "items": {
+            "Summer after high school": {
+                "id": "0ade8379-2472-4aaf-8b41-6a342f00ed0e",
+                "itemName": "Summer after high school",
+                "dueDate": "",
+                "done": false
+            },
+            "When we first met": {
+                "id": "efbe35af-44f4-4262-bbcd-76aea5f9f87b",
+                "itemName": "When we first met",
+                "dueDate": "",
+                "done": false
+            },
+            "We got matching tattoos": {
+                "id": "e2139f98-0916-4cac-bc12-f8bbbf752a45",
+                "itemName": "We got matching tattoos",
+                "dueDate": "",
+                "done": true
+            }
+        }
+    },
+    "Big Realizations": {
+        "id": "d455952f-5a43-43b7-9a20-09886487c010",
+        "listTitle": "Big Realizations",
+        "description": "Things about myself and the world that I have discovered",
+        "items": {
+            "I am not lazy, I never was. I just believed that I wasn't smart or capable enough to complete the tasks.": {
+                "id": "5ca1a504-c9ec-4649-9d50-8d4de75f74d8",
+                "itemName": "I am not lazy, I never was. I just believed that I wasn't smart or capable enough to complete the tasks.",
+                "dueDate": "",
+                "done": false
+            }
+        }
     }
 }

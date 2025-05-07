@@ -5,6 +5,13 @@ import Box from '../components/Box.jsx';
 import CreateList from './CreateList';
 import '../styles/Home.css';
 
+//For Delete PopUp:
+import Dialog from '@mui/material/Dialog';
+import DialogTitle from '@mui/material/DialogTitle';
+import DialogActions from '@mui/material/DialogActions';
+import Button from '@mui/material/Button';
+
+// For Heart Checkbox
 import Checkbox from '@mui/material/Checkbox';
 import { HeartCheck } from "../components/HeartCheck.jsx";
 
@@ -14,6 +21,8 @@ function Home() {
   const [descInput, setDescInput] = useState("");
   const [createNewList, setCreateNewList] = React.useState(false);
   const [isChecked, setIsChecked] = useState({}); // For checkboxes
+  const [isPopupOpen, setPopupOpen] = useState(false); // popup for if you wanna delete a list
+  const [yesDel, setYesDel] = useState(false);
 
   // This way we won't need to manually refresh it when we want to add a new item
   const [itemCount, setItemCount] = useState(0);
@@ -24,9 +33,6 @@ function Home() {
       [title]: event.target.checked
     }));
   };
-
-
-
 
 
   // Creates Grocery list
@@ -72,11 +78,7 @@ function Home() {
 
   function delList() {
 
-    Object.keys(isChecked).forEach(function (key) {
-      if (isChecked[key]) {
-        del(key);
-      }
-    })
+    setPopupOpen(true);
 
   }
 
@@ -96,53 +98,83 @@ function Home() {
 
   }
 
-  {/* console.log("isChecked: " + JSON.stringify(isChecked)); */ }
+  const handleClose = () => {
+    document.activeElement?.blur(); // Remove focus from the button
+    setPopupOpen(false);
+  };
+
   return (
     <>
       <div>
 
         <Box id="delList">
-          <button id="delBtn" onClick={delList} className="colorScheme">DELETE LIST</button>
+          <button id="delBtn" onClick={delList} className="colorScheme btn">DELETE LIST</button>
         </Box>
         <Box id="createLists">
-          <button className="colorScheme" onClick={() => setCreateNewList(true)}>Create A New List</button>
+          <button className="colorScheme btn" onClick={() => setCreateNewList(true)}>Create A New List</button>
         </Box>
 
-        <div id="pageTitle">
-          <h2 >Hey Nikki, here's your lists</h2>
+        <div className="centerPage">
+          <div id="pageTitle" >
+            <h2>Hey Nikki, here's your lists</h2>
+          </div>
         </div>
 
+        <div className="centerPage slideList">
+          <Box style={{ backgroundColor: "white" }}>
+            <Box>
+              <div id="allLists">
+                {(Object.keys(data).length === 0) ? (
+                  <p>Loading...</p>
+                ) : (
+                  Object.entries(data).map(([title, list], i) => (
+                    <div key={i}>
+                      <div>
+                        <Checkbox
+                          icon={<HeartCheck check={false} />}
+                          checkedIcon={<HeartCheck check={true} />}
+                          sx={{
+                            padding: "4px",
+                            "&.Mui-checked": {
+                              color: "hotpink"
+                            },
+                          }}
+                          checked={!!isChecked[title]}
+                          onChange={handleIsCheckedChange(title)}
+                        />
+                        <Link to={`/list/${encodeURIComponent(title)}`}>
+                          <button className="colorScheme part btn" ><strong>{title} List: </strong> {list.description}</button>
+                        </Link>
+                      </div>
+                      <br />
+                    </div>
+                  ))
+                )}
+              </div>
+            </Box>
+          </Box>
+        </div>
 
-        <Box>
-          <div id="allLists">
-            {(Object.keys(data).length === 0) ? (
-              <p>Loading...</p>
-            ) : (
-              Object.entries(data).map(([title, list], i) => (
-                <div key={i}>
-                  <div>
-                    <Checkbox
-                      icon={<HeartCheck check={false} />}
-                      checkedIcon={<HeartCheck check={true} />}
-                      sx={{
-                        padding: "4px",
-                        "&.Mui-checked": {
-                          color: "hotpink"
-                        },
-                      }}
-                      checked={!!isChecked[title]}
-                      onChange={handleIsCheckedChange(title)}
-                    />
-                    <Link to={`/list/${encodeURIComponent(title)}`}>
-                      <button className="colorScheme part" ><strong>{title} List: </strong> {list.description}</button>
-                    </Link>
-                  </div>
-                  <br />
-                </div>
-              ))
-            )}
+        <Dialog open={isPopupOpen} onClose={() => setPopupOpen(false)} >
+
+          <div className="colorScheme" style={{ padding: '1rem' }}>
+
+            <p>Are you sure you want to delete the lists?</p>
+            <button className="yesBtn btn" onClick={() => {
+
+              Object.keys(isChecked).forEach(function (key) {
+                if (isChecked[key]) {
+                  del(key);
+                }
+              })
+              setPopupOpen(false);
+
+            }}>Yes</button>
+            <button className="noBtn btn" onClick={handleClose}>No</button>
+
           </div>
-        </Box>
+
+        </Dialog>
 
       </div>
     </>
@@ -150,3 +182,4 @@ function Home() {
 }
 
 export default Home
+

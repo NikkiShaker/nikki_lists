@@ -75,3 +75,35 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.btn {
+  transition: transform 0.3s, background-color 0.4s, color 0.4s;
+}
+
+.btn:hover {
+  transform: translateY(-6.5px);
+  color: black;
+  /*background-color: #FFE6EE;*/
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-70vw);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(70vw);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+
+}

@@ -8,7 +8,7 @@ function HomeBtn() {
         <div>
             <Link to="/" >
                 <Box>
-                    <button className="colorScheme">
+                    <button className="colorScheme btn">
                         HOME
                     </button>
                 </Box>

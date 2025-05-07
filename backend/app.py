@@ -3,7 +3,7 @@ from flask_cors import CORS
 from list import List
 
 app = Flask(__name__)
-CORS(app, origins=["http://localhost:3000", "http://localhost:5173"])
+CORS(app, supports_credentials=True, resources={r"/*": {"origins": "*"}})
 
 print("Enter your name: ")
 name = input()
@@ -51,6 +51,18 @@ def add_to_list():
     done = data.get("done")
 
     result = myList.addToList(title, itemName, dueDate, done)
+
+    return jsonify(result)
+
+@app.route('/itemCompleted', methods=['POST'])
+def item_completed():
+
+    data = request.get_json()
+    title = data.get("title")
+    itemName = data.get("itemName")
+    done = data.get("done")
+
+    result = myList.itemCompleted(title, itemName, done)
 
     return jsonify(result)
 
