@@ -3,14 +3,7 @@
         "id": "3e416fc4-b48d-4d47-9588-f9e322bd5405",
         "listTitle": "Hit",
         "description": "Just some people I need to take out",
-        "items": {
-            "": {
-                "id": "3ae46483-1c50-4a4b-8e3c-10cccf988b61",
-                "itemName": "",
-                "dueDate": "",
-                "done": false
-            }
-        }
+        "items": {}
     },
     "Crushesssss": {
         "id": "00326e54-543d-4329-afba-5b75c9807e1b",
@@ -21,18 +14,6 @@
                 "id": "f9819b6a-f4de-474c-90d8-7f583d1e5676",
                 "itemName": "A guy",
                 "dueDate": "2025-05-09",
-                "done": false
-            },
-            "Another guy": {
-                "id": "0a3afd5e-cb12-4f51-a0f1-e1f9951dcbbd",
-                "itemName": "Another guy",
-                "dueDate": "2025-05-30",
-                "done": false
-            },
-            "Third guy": {
-                "id": "db8edf62-5780-4418-b2ca-5ddcacdc6783",
-                "itemName": "Third guy",
-                "dueDate": "2025-07-03",
                 "done": false
             },
             "A dude": {
@@ -59,12 +40,6 @@
                 "itemName": "Eggs",
                 "dueDate": "2025-05-29",
                 "done": false
-            },
-            "": {
-                "id": "2b833a54-a36a-4e65-8304-25f5ffa30819",
-                "itemName": "",
-                "dueDate": "",
-                "done": false
             }
         }
     },
@@ -84,7 +59,14 @@
         "id": "ce4776a4-d8b6-4180-829f-7c4e7a18c3ae",
         "listTitle": "Recipe",
         "description": "Just some new recipe ideas",
-        "items": {}
+        "items": {
+            "Homemade Popcorn (popcorn kernels, coconut oil, salt)": {
+                "id": "82ccc301-9ab7-4d60-9fe1-b367b1db77c6",
+                "itemName": "Homemade Popcorn (popcorn kernels, coconut oil, salt)",
+                "dueDate": "",
+                "done": true
+            }
+        }
     },
     "Favourite songs": {
         "id": "4191416b-959b-47a9-b592-842f5c9cb1b9",
@@ -119,6 +101,50 @@
             "I am not lazy, I never was. I just believed that I wasn't smart or capable enough to complete the tasks.": {
                 "id": "5ca1a504-c9ec-4649-9d50-8d4de75f74d8",
                 "itemName": "I am not lazy, I never was. I just believed that I wasn't smart or capable enough to complete the tasks.",
+                "dueDate": "",
+                "done": false
+            }
+        }
+    },
+    "Project Planner": {
+        "id": "07b5155c-5afa-4dc0-8784-f42d448ed57b",
+        "listTitle": "Project Planner",
+        "description": "The list of projects I want to work on in order to expand my programming knowledge",
+        "items": {
+            "Secrets App (This is an app that you log into so that you can store your secrets. The purpose is for me to gain a better understanding of user authentication using React)": {
+                "id": "b4e0b22f-7189-4f0a-8969-058e11c7cfcb",
+                "itemName": "Secrets App (This is an app that you log into so that you can store your secrets. The purpose is for me to gain a better understanding of user authentication using React)",
+                "dueDate": "",
+                "done": false
+            },
+            "Pong Game (where there's two players that try to hit the ping pong ball to avoid getting scored on. I would like to understand how a project like this would be created)": {
+                "id": "31bbd72b-0d62-4d28-9eaa-a84f47f7740d",
+                "itemName": "Pong Game (where there's two players that try to hit the ping pong ball to avoid getting scored on. I would like to understand how a project like this would be created)",
+                "dueDate": "",
+                "done": false
+            },
+            "Running Game (where a player has to jump over obstacles while they're running. I want to understand how a game like this is created)": {
+                "id": "ccb9b115-fa01-4f0f-b050-a7debd3c5041",
+                "itemName": "Running Game (where a player has to jump over obstacles while they're running. I want to understand how a game like this is created)",
+                "dueDate": "",
+                "done": false
+            },
+            "Portfolio Site (where a user logs in and they can easily add as many projects as they want for the employer to see by interacting with the user interface. I will do this project after completing the Secrets App)": {
+                "id": "3690061a-2108-40a0-b323-1fd058903fcc",
+                "itemName": "Portfolio Site (where a user logs in and they can easily add as many projects as they want for the employer to see by interacting with the user interface. I will do this project after completing the Secrets App)",
+                "dueDate": "",
+                "done": false
+            }
+        }
+    },
+    "testing a new list": {
+        "id": "fe8b3e73-0855-4338-a141-7d5d6271046c",
+        "listTitle": "testing a new list",
+        "description": "hey",
+        "items": {
+            "New item": {
+                "id": "e093cfed-496e-43b0-953e-14b56c13b570",
+                "itemName": "New item",
                 "dueDate": "",
                 "done": false
             }

@@ -4,8 +4,13 @@ import { useParams } from "react-router-dom";
 import { Navigate, Link } from "react-router-dom"
 import Box from '../components/Box.jsx';
 import HomeBtn from '../components/HomeBtn.jsx';
+
+//For Delete PopUp:
+import Dialog from '@mui/material/Dialog';
+
 import '../styles/List.css';
 import '../styles/Home.css';
+
 import Checkbox from '@mui/material/Checkbox';
 import { HeartCheck } from "../components/HeartCheck.jsx";
 
@@ -23,7 +28,12 @@ function List() {
 
     // Keeps list of checked items
     const [checkedList, setCheckedList] = useState({});
+
+    // Keeps list of clicked items so we know which ones we want to delete
     const [itemsClicked, setItemsClicked] = useState({});
+
+    // For delete popup
+    const [isPopupOpen, setPopupOpen] = useState(false); // popup for if you wanna delete a list
 
     // Handles when there's changes made to the items
     const handleNameChange = (event) => {
@@ -94,6 +104,40 @@ function List() {
         }
     }
 
+
+    // Deletes item(s) from the list
+    const removeItem = async () => {
+
+        for (const [item] of Object.entries(itemsClicked)) {
+            if (itemsClicked[item]) {
+                try {
+                    const response = await axios.post("http://localhost:5001/removeItem", {
+                        title: listTitle,
+                        itemName: item
+                    });
+                    console.log("create response: ", response.data);
+                    setItemsClicked({});
+                    setItemCount(prev => prev + 1);
+                }
+                catch (error) {
+                    console.log("Error creating list: " + error)
+                }
+            }
+        }
+
+    }
+
+
+    // This closes the popup once the user has decided whether or not to delete the items in the list
+    const handleClose = () => {
+        document.activeElement?.blur(); // Remove focus from the button
+        setPopupOpen(false);
+    };
+
+
+    //
+    const noItemsSelected = !Object.values(itemsClicked).some(val => val);
+
     // Getting data for the list being displayed
     useEffect(() => {
 
@@ -106,9 +150,11 @@ function List() {
 
                 Object.entries(res.data.items).forEach(([itemName, item]) => {
                     initialChecks[itemName] = item.done;
+                    //console.log(itemName + ": " + itemsClicked[itemName])
                 });
 
                 setCheckedList(initialChecks);
+
             })
             .catch(error => {
                 console.log("Error with catching lists", error);
@@ -149,7 +195,18 @@ function List() {
                                                 onChange={handleCheckedListChange(itemName)}
                                             />
 
-                                            <button style={{ backgroundColor: "#FFC0CB" }}><strong>{itemName}</strong></button>
+                                            <button onClick={
+                                                (() => {
+
+                                                    setItemsClicked(prev => ({
+                                                        ...prev,
+                                                        [itemName]: !prev[itemName]
+                                                    }))
+
+                                                    setItemCount(prev => prev + 1);
+
+                                                })
+                                            } style={{ color: itemsClicked[itemName] ? "#FFC0CB" : "#ffffff", backgroundColor: itemsClicked[itemName] ? "#000000" : "#FFC0CB" }}><strong>{itemName}</strong></button>
                                         </div>
 
                                         <ul className="itemDetails">
@@ -168,7 +225,7 @@ function List() {
 
                 <div id="remove">
                     <Box >
-                        <button id="removeBtn" className="colorScheme btn">REMOVE ITEM</button>
+                        <button id="removeBtn" className="colorScheme btn" onClick={setPopupOpen}>REMOVE ITEM</button>
                     </Box>
                 </div>
 
@@ -211,6 +268,23 @@ function List() {
                     </Box>
                 </div>
 
+                <Dialog open={isPopupOpen} onClose={() => setPopupOpen(false)} >
+
+                    <div className="colorScheme" style={{ padding: '1rem' }}>
+
+                        <p>Are you sure you want to delete the item{"(s)"}?</p>
+                        <button className="yesBtn btn" onClick={() => {
+
+                            removeItem();
+                            setPopupOpen(false);
+
+                        }} disabled={noItemsSelected} style={{ position: "relative", left: "5.5vw" }} >Yes</button>
+
+                        <button className="noBtn btn" onClick={handleClose} style={{ position: "relative", left: "6.9vw" }}>No</button>
+
+                    </div>
+
+                </Dialog>
             </div >
         </>
     )

@@ -34,31 +34,6 @@ function Home() {
     }));
   };
 
-
-  // Creates Grocery list
-  /*  useEffect(() => {
-      axios.post("http://localhost:5001/create", { title: "Groceries", description: "For remembering" })
-        .then(response => {
-          setData(response.data);
-          console.log("Creating Grocery list: ", response.data);
-        })
-        .catch(error => {
-          console.error("Error fetching data:", error);
-        });
-    }, []);*/
-
-  // Creates To Do list
-  /* useEffect(() => {
-        axios.post("http://localhost:5001/create", { title: "To Do", description: "Things I gotta do before Monday" })
-          .then(response => {
-            setData(response.data);
-            console.log("Creating To Do list: ", response.data);
-          })
-          .catch(error => {
-            console.error("Error fetching data:", error);
-          });
-      }, []);*/
-
   // Returns all lists
   useEffect(() => { // Using useEffect to fetch data from the /getList route in the backend
     axios.get("http://localhost:5001/allLists")
@@ -89,6 +64,7 @@ function Home() {
         "title": title
       });
       console.log("res" + JSON.stringify(res));
+      setIsChecked({})
       setItemCount(prev => prev + 1);
     }
 
@@ -102,6 +78,8 @@ function Home() {
     document.activeElement?.blur(); // Remove focus from the button
     setPopupOpen(false);
   };
+
+  const noItemsSelected = !Object.values(isChecked).some(val => val);
 
   return (
     <>
@@ -169,7 +147,7 @@ function Home() {
               })
               setPopupOpen(false);
 
-            }}>Yes</button>
+            }} disabled={noItemsSelected}>Yes</button>
             <button className="noBtn btn" onClick={handleClose}>No</button>
 
           </div>
