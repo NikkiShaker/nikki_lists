@@ -11,6 +11,10 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  background-image: url("../images/fixed-cute-coquette-pink-ribbon-bow-2.JPG");
+  background-size: contain;
+  background-repeat: repeat;
 }
 
 a {
@@ -30,9 +34,7 @@ body {
   min-width: 100vw;
   min-height: 100vh;
 
-  background-image: url("../images/fixed-cute-coquette-pink-ribbon-bow-2.JPG");
-  background-size: contain;
-  background-repeat: repeat;
+
 }
 
 h1 {
@@ -106,4 +108,39 @@ button:focus-visible {
     transform: translateX(0);
   }
 
+}
+
+@keyframes bounce {
+
+  0% {
+    transform: translateY(0);
+  }
+
+  20% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-8vh);
+  }
+
+  50% {
+    transform: translateY(0);
+  }
+
+  60% {
+    transform: translateY(-4vh);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+
+}
+
+.bounce {
+  animation-name: bounce;
+  animation-duration: 1s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: 1;
 }

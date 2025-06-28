@@ -57,13 +57,13 @@
   width: 36.5vw;
   height: 10vh;
   border-radius: 12px;
-  animation: slideInRight 1.5s ease-in 0s 1 normal none;
+  /*animation: slideInRight 1.5s ease-in 0s 1 normal none;*/
 }
 
 #createLists {
   position: relative;
   bottom: 0.6vh;
-  left: 52vw;
+  left: 63.5vw;
 }
 
 #delList {
@@ -75,7 +75,7 @@
 
 .slideList {
 
-  animation: slideInLeft 1.5s ease-in 0s 1 normal none;
+  /* animation: slideInLeft 1.5s ease-in 0s 1 normal none;*/
 
   /*
   animation-name: slideInLeft;

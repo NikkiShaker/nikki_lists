@@ -93,14 +93,14 @@ function Home() {
         </Box>
 
         <div className="centerPage">
-          <div id="pageTitle" >
+          <div id="pageTitle"> {/*className="bounce">*/}
             <h2>Hey Nikki, here's your lists</h2>
           </div>
         </div>
 
         <div className="centerPage slideList">
           <Box style={{ backgroundColor: "white" }}>
-            <Box>
+            <Box >
               <div id="allLists">
                 {(Object.keys(data).length === 0) ? (
                   <p>Loading...</p>

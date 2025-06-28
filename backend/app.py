@@ -5,10 +5,10 @@ from list import List
 app = Flask(__name__)
 CORS(app, supports_credentials=True, resources={r"/*": {"origins": "*"}})
 
-print("Enter your name: ")
-name = input()
+# print("Enter your name: ")
+# name = input()
 
-myList = List(str(name)) # creating list for the person with the name inputted
+myList = List(str("")) # creating list for the person with the name inputted
 
 @app.route('/', methods=['GET'])
 def home():

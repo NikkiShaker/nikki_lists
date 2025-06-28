@@ -5,40 +5,27 @@
         "description": "Just some people I need to take out",
         "items": {}
     },
-    "Crushesssss": {
-        "id": "00326e54-543d-4329-afba-5b75c9807e1b",
-        "listTitle": "Crushesssss",
-        "description": "Just some people I might like ;)",
-        "items": {
-            "A guy": {
-                "id": "f9819b6a-f4de-474c-90d8-7f583d1e5676",
-                "itemName": "A guy",
-                "dueDate": "2025-05-09",
-                "done": false
-            },
-            "A dude": {
-                "id": "9421aaa4-1cc4-43e3-b803-4b54a380d943",
-                "itemName": "A dude",
-                "dueDate": "2025-06-07",
-                "done": false
-            }
-        }
-    },
     "Grocery": {
         "id": "62bb0f6d-ca4b-4218-844e-a46ad05dec0b",
         "listTitle": "Grocery",
         "description": "SHE NEEDS SOME MILK",
         "items": {
-            "Milk": {
-                "id": "33266f94-aea5-4322-829b-8654f4ef0434",
-                "itemName": "Milk",
-                "dueDate": "2025-04-30",
-                "done": true
+            "Eyeliner": {
+                "id": "7201f483-bbcf-4814-9b37-7f3a83b70911",
+                "itemName": "Eyeliner",
+                "dueDate": "",
+                "done": false
             },
-            "Eggs": {
-                "id": "e98309af-2210-4ac9-b979-7091fd49e4b3",
-                "itemName": "Eggs",
-                "dueDate": "2025-05-29",
+            "Birthday card": {
+                "id": "b7c83b21-4afc-4278-a048-dc2218e4d5b8",
+                "itemName": "Birthday card",
+                "dueDate": "",
+                "done": false
+            },
+            "gift card": {
+                "id": "8e6ed7e4-450a-4b60-9155-d349d4e96d50",
+                "itemName": "gift card",
+                "dueDate": "",
                 "done": false
             }
         }
@@ -47,24 +34,12 @@
         "id": "d31e7f24-b3fc-4539-8493-0ab71e6d78c2",
         "listTitle": "Hit (on)",
         "description": "Just some people I need to take out (on a date)",
-        "items": {}
-    },
-    "To Do": {
-        "id": "74561bd6-60dc-4d6c-a1d5-4f09d4f049a9",
-        "listTitle": "To Do",
-        "description": "Gotta be productive and keep capitalism alive",
-        "items": {}
-    },
-    "Recipe": {
-        "id": "ce4776a4-d8b6-4180-829f-7c4e7a18c3ae",
-        "listTitle": "Recipe",
-        "description": "Just some new recipe ideas",
         "items": {
-            "Homemade Popcorn (popcorn kernels, coconut oil, salt)": {
-                "id": "82ccc301-9ab7-4d60-9fe1-b367b1db77c6",
-                "itemName": "Homemade Popcorn (popcorn kernels, coconut oil, salt)",
+            "You know who you are ;)": {
+                "id": "6fe94e07-7da2-40a5-8dd0-896e0cf1f299",
+                "itemName": "You know who you are ;)",
                 "dueDate": "",
-                "done": true
+                "done": false
             }
         }
     },
@@ -73,23 +48,11 @@
         "listTitle": "Favourite songs",
         "description": "Just the most nostalgic and best songs",
         "items": {
-            "Summer after high school": {
-                "id": "0ade8379-2472-4aaf-8b41-6a342f00ed0e",
-                "itemName": "Summer after high school",
+            "Ed Sheeran - The A Team": {
+                "id": "77b73e35-244a-448d-a1e7-527ca01c69cd",
+                "itemName": "Ed Sheeran - The A Team",
                 "dueDate": "",
                 "done": false
-            },
-            "When we first met": {
-                "id": "efbe35af-44f4-4262-bbcd-76aea5f9f87b",
-                "itemName": "When we first met",
-                "dueDate": "",
-                "done": false
-            },
-            "We got matching tattoos": {
-                "id": "e2139f98-0916-4cac-bc12-f8bbbf752a45",
-                "itemName": "We got matching tattoos",
-                "dueDate": "",
-                "done": true
             }
         }
     },
@@ -121,7 +84,7 @@
                 "id": "31bbd72b-0d62-4d28-9eaa-a84f47f7740d",
                 "itemName": "Pong Game (where there's two players that try to hit the ping pong ball to avoid getting scored on. I would like to understand how a project like this would be created)",
                 "dueDate": "",
-                "done": false
+                "done": true
             },
             "Running Game (where a player has to jump over obstacles while they're running. I want to understand how a game like this is created)": {
                 "id": "ccb9b115-fa01-4f0f-b050-a7debd3c5041",
@@ -137,14 +100,142 @@
             }
         }
     },
-    "testing a new list": {
-        "id": "fe8b3e73-0855-4338-a141-7d5d6271046c",
-        "listTitle": "testing a new list",
-        "description": "hey",
+    "The Little Things": {
+        "id": "15a87be2-3c61-4361-8eb7-0163b6af1409",
+        "listTitle": "The Little Things",
+        "description": "The little things in life that bring me joy",
         "items": {
-            "New item": {
-                "id": "e093cfed-496e-43b0-953e-14b56c13b570",
-                "itemName": "New item",
+            "Buying the keyboards that make nice clicky sounds when you type on them": {
+                "id": "5b4ded26-91e4-4b88-87f8-ffab829ef2f4",
+                "itemName": "Buying the keyboards that make nice clicky sounds when you type on them",
+                "dueDate": "2025-05-10",
+                "done": false
+            },
+            "Using belts or accessories that bring an outfit together": {
+                "id": "f2be7a8e-7d53-4437-9312-abb2564f57d6",
+                "itemName": "Using belts or accessories that bring an outfit together",
+                "dueDate": "",
+                "done": false
+            },
+            "My Heart Necklace": {
+                "id": "e05efc87-077d-46ae-9539-9cd68148323d",
+                "itemName": "My Heart Necklace",
+                "dueDate": "2025-05-24",
+                "done": false
+            },
+            "Phone Strap": {
+                "id": "c9fd15d4-a38b-40db-950c-064f7be1c585",
+                "itemName": "Phone Strap",
+                "dueDate": "2025-05-24",
+                "done": false
+            }
+        }
+    },
+    "To Do": {
+        "id": "0b1b6b2d-770a-428a-bb76-bbbc84ca49a0",
+        "listTitle": "To Do",
+        "description": "Don't forget",
+        "items": {
+            "Watch one episode of Peppa Pig in French per day": {
+                "id": "bee9c3eb-0d9f-48c0-8791-d40c2a2e3ac6",
+                "itemName": "Watch one episode of Peppa Pig in French per day",
+                "dueDate": "",
+                "done": false
+            },
+            "Look up one thing in your list of questions about adulting": {
+                "id": "b0f92a0b-b38d-4f8b-838a-689e0b5e5468",
+                "itemName": "Look up one thing in your list of questions about adulting",
+                "dueDate": "",
+                "done": false
+            },
+            "See if you can make your to-do list into an app on your laptop and phone": {
+                "id": "e7dfa9f4-e456-4772-9353-3be26a15cb44",
+                "itemName": "See if you can make your to-do list into an app on your laptop and phone",
+                "dueDate": "",
+                "done": false
+            },
+            "Plan a day to go to bayshore so that you can find a good belt for your outfits": {
+                "id": "2a682e21-a33f-4b5c-bc5a-b0dc56355aba",
+                "itemName": "Plan a day to go to bayshore so that you can find a good belt for your outfits",
+                "dueDate": "",
+                "done": false
+            }
+        }
+    },
+    "Quiz Project Questions": {
+        "id": "4e64f500-e589-45b1-a90b-a77012347213",
+        "listTitle": "Quiz Project Questions",
+        "description": "Personal questions to ask users about for authentication",
+        "items": {
+            "What is your least favourite color?": {
+                "id": "7a61b14f-f3c5-41e0-8803-cd96a660b25a",
+                "itemName": "What is your least favourite color?",
+                "dueDate": "",
+                "done": false
+            },
+            "The name of your worst enemy": {
+                "id": "aecc94f3-8137-411d-b5f2-e0d1a1c9dd68",
+                "itemName": "The name of your worst enemy",
+                "dueDate": "",
+                "done": false
+            },
+            "What's your dream job": {
+                "id": "c7b943a5-32ef-4b07-8ce3-11ba9b311876",
+                "itemName": "What's your dream job",
+                "dueDate": "",
+                "done": false
+            },
+            "The name of your first crush": {
+                "id": "fd546cf5-d03a-4f86-a2ee-ad6bad1fd272",
+                "itemName": "The name of your first crush",
+                "dueDate": "",
+                "done": false
+            },
+            "The longest word you know": {
+                "id": "d82ff7a7-de40-4ae8-97e6-50ff2f24e4df",
+                "itemName": "The longest word you know",
+                "dueDate": "",
+                "done": false
+            },
+            "What was the make and model of your first car?": {
+                "id": "422044d4-9641-46be-bc72-305fc00581f2",
+                "itemName": "What was the make and model of your first car?",
+                "dueDate": "",
+                "done": false
+            },
+            "Which city did your parents meet in?": {
+                "id": "95c3fd0a-0a8e-4923-92a4-276c533e6269",
+                "itemName": "Which city did your parents meet in?",
+                "dueDate": "",
+                "done": false
+            },
+            "Least favourite teacher in high school": {
+                "id": "1bb8c89c-4605-4888-a50d-e2387aab28ba",
+                "itemName": "Least favourite teacher in high school",
+                "dueDate": "",
+                "done": false
+            },
+            "Where did you have your first kiss?": {
+                "id": "35afc177-dd6d-4ddd-814f-3833ea6b4acb",
+                "itemName": "Where did you have your first kiss?",
+                "dueDate": "",
+                "done": false
+            },
+            "What's your favourite book about?": {
+                "id": "d2573067-a051-4f76-8b8a-7a8d80a9d48d",
+                "itemName": "What's your favourite book about?",
+                "dueDate": "",
+                "done": false
+            },
+            "The place where you go when you say \"I know a spot\"": {
+                "id": "a682dedd-f6a3-406d-afa1-c9e51b1e9505",
+                "itemName": "The place where you go when you say \"I know a spot\"",
+                "dueDate": "",
+                "done": false
+            },
+            "The name of that one family member you always avoid": {
+                "id": "1456a168-3d57-4315-acec-2ad55e322164",
+                "itemName": "The name of that one family member you always avoid",
                 "dueDate": "",
                 "done": false
             }
